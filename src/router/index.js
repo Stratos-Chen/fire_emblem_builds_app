@@ -1,12 +1,16 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
-import BuildsIndex from "../views/BuildsIndex.vue";
+import Builds from "../views/BuildsIndex.vue";
 import Signup from "../views/Signup.vue";
 import Login from "../views/Login.vue";
 import Logout from "../views/Logout.vue";
 import Heroes from "../views/HeroesIndex.vue";
 import Skills from "../views/SkillsIndex.vue";
+import HeroesShow from "../views/HeroesShow.vue";
+import BuildsShow from "../views/BuildsShow.vue";
+import CurrentUser from "../views/UsersShow.vue";
+import BuildsCreate from "../views/BuildsCreate.vue";
 
 Vue.use(VueRouter);
 
@@ -25,7 +29,7 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
   {
-    path: "/buildsindex", name: "buildsindex", component: BuildsIndex
+    path: "/builds", name: "builds-index", component: Builds
   },
   {
     path: "/signup", name: "signup", component: Signup
@@ -37,11 +41,23 @@ const routes = [
     path: "/logout", name: "logout", component: Logout
   },
   {
-    path: "/heroesindex", name: "heroesindex", component: Heroes
+    path: "/heroes", name: "heroes-index", component: Heroes
   },
   {
-    path: "/skillsindex", name: "skillsindex", component: Skills
-  }
+    path: "/skills", name: "skills-index", component: Skills
+  },
+  {
+    path: "/heroes/:name", name: "heroes-show", component: HeroesShow
+  },
+  {
+    path: "/builds/new", name: "builds-new", component: BuildsCreate
+  },
+  {
+    path: "/builds/:id", name: "builds-show", component: BuildsShow
+  },
+  {
+    path: "/users/:id", name: "users-show", compoment: CurrentUser
+  },
 ];
 
 const router = new VueRouter({

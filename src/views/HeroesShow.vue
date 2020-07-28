@@ -1,6 +1,14 @@
 <template>
   <div class="heroes-show">
     <h2>{{ heroe.name }}</h2>
+    <p>Origin game: {{ heroe.origin }} </p>
+    <p>Weapon type: {{ heroe.weaponType }}</p>
+    <p>Movement Type: {{ heroe.moveType }}</p>
+    <p>HP: {{ heroe.hp }}</p>
+    <p>Atk: {{ heroe.atk }}</p>
+    <p>Spd: {{ heroe.spd }}</p>
+    <p>Def: {{ heroe.def }}</p>
+    <p>Res: {{ heroe.res }}</p>
   </div>
 </template>
 

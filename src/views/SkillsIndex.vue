@@ -1,6 +1,6 @@
 <template>
   <div class="Index">
-    <h1>{{ "skill list" }}</h1>
+    <h1>{{ "Skill list" }}</h1>
     <div v-for="skill in skills" v-bind:key="skill.id">
       <h2>{{ skill.name }}</h2>
       <ul>
