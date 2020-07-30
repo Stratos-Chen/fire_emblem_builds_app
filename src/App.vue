@@ -9,7 +9,7 @@
       <router-link to="/logout">Logout</router-link> |
       <router-link to="/heroes">Heroes List</router-link> |
       <router-link to="/skills">Skills List</router-link> |
-      <router-link to="/users/:id">User Info</router-link> 
+      <router-link to="/users/me">User Info</router-link> 
     </div>
     <router-view/>
   </div>

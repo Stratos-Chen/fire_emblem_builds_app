@@ -1,13 +1,11 @@
 <template>
   <div class="Index">
+    <label> Search By Name: </label>
     <div class="form-group">
       <input class="form-control" v-model="nameFilter" list="names" type="text" placeholder="Search">
     </div>
-    <div>
-      <button v-on:click="sortAttribute = 'origin'">Sort by Origin</button>
-    </div>
     <h1>{{ "Hero list" }}</h1>
-    <div v-for="heroe in heroes" v-bind:key="heroe.id">
+    <div v-for="heroe in filterBy(heroes, nameFilter, 'name')" v-bind:key="heroe.id">
       <h2>{{ heroe.name }}</h2>
       <ul>
         <li>Origin game: {{ heroe.origin }}</li>
@@ -32,12 +30,12 @@
 import axios from "axios";
 import Vue2Filters from "vue2-filters";
 export default {
+  mixins: [Vue2Filters.mixin],
   data: function() {
     return {
       errors: [],
       heroes: [],
-      nameFilter: "",
-      sortAttribute: "origin"
+      nameFilter: ""
     };
   },
   created: function() {

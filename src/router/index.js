@@ -9,8 +9,10 @@ import Heroes from "../views/HeroesIndex.vue";
 import Skills from "../views/SkillsIndex.vue";
 import HeroesShow from "../views/HeroesShow.vue";
 import BuildsShow from "../views/BuildsShow.vue";
-import CurrentUser from "../views/UsersShow.vue";
 import BuildsCreate from "../views/BuildsCreate.vue";
+import UsersShow from "../views/UsersShow.vue";
+import BuildsEdit from "../views/BuildsEdit.vue";
+import UsersEdit from "../views/UsersEdit.vue";
 
 Vue.use(VueRouter);
 
@@ -56,8 +58,14 @@ const routes = [
     path: "/builds/:id", name: "builds-show", component: BuildsShow
   },
   {
-    path: "/users/:id", name: "users-show", compoment: CurrentUser
+    path: "/users/me", name: "users-show", component: UsersShow
   },
+  {
+    path: "/builds/:id/edit", name: "builds-edit", component: BuildsEdit
+  },
+  {
+    path: "/users/me/edit", name: "users-edit", component: UsersEdit
+  }
 ];
 
 const router = new VueRouter({

@@ -1,50 +1,50 @@
 <template>
-  <div class="build create">
-    <form v-on:submit.prevent="createBuild()">
-      <h1>Create a build</h1>
+  <div class="builds-edit">
+    <form v-on:submit.prevent="updateBuild()">
+      <h1>Build Edit</h1>
       <ul>
         <li class="text-danger" v-for="error in errors">{{ error }}</li>
       </ul>
       Build Name:
-      <input v-model="build_name" placeholder="input a build name"> <br>
+      <input v-model="build.name" placeholder="input a build name"> <br>
       Hero:
-      <select v-model="hero">
+      <select v-model="build.hero_name">
         <option v-for="heroe in heroes" v-bind:hero_name="heroe.name">
           {{ heroe.name }}
         </option>
       </select> <br>
       Weapon Skill:
-      <select v-model="weapon">
+      <select v-model="build.weapon_skill_name">
         <option v-for="weaponSkill in weaponSkills" v-bind:weapon_skill="weaponSkill.name">
           {{ weaponSkill.name }}
         </option>
       </select> <br>
       Assist Skill:
-      <select v-model="assist">
+      <select v-model="build.assist">
         <option v-for="assistSkill in assistSkills" v-bind:assist="assistSkill.name">
           {{ assistSkill.name }}
         </option>
       </select> <br>
       Special Skill:
-       <select v-model="special">
+       <select v-model="build.special">
         <option v-for="specialSkill in specialSkills" v-bind:special="specialSkill.name">
           {{ specialSkill.name }}
         </option>
       </select> <br>
       Passive A Skill:
-      <select v-model="passivea">
+      <select v-model="build.passivea">
         <option v-for="passiveASkill in passiveASkills" v-bind:passivea="passiveASkill.name">
           {{ passiveASkill.name }}
         </option>
       </select> <br>
       Passive B Skill:
-      <select v-model="passiveb">
+      <select v-model="build.passiveb">
         <option v-for="passiveBSkill in passiveBSkills" v-bind:passiveb="passiveBSkill.name">
           {{ passiveBSkill.name }}
         </option>
       </select> <br>
       Passive C Skill:
-      <select v-model="passivec">
+      <select v-model="build.passivec">
         <option v-for="passiveCSkill in passiveCSkills" v-bind:passivec="passiveCSkill.name">
           {{ passiveCSkill.name }}
         </option>
@@ -52,7 +52,11 @@
       <input type="submit" class="btn btn-primary" value="Submit" />
     </form>
   </div>
+  
 </template>
+
+<style>
+</style>
 
 <script>
 import axios from "axios";
@@ -61,24 +65,15 @@ export default {
   mixins: [Vue2Filters.mixin],
   data: function() {
     return {
-      builds: [],
       errors: [],
+      build: {},
       heroes: [],
       weaponSkills: [],
       assistSkills: [],
       specialSkills: [],
       passiveASkills: [],
       passiveBSkills: [],
-      passiveCSkills: [],
-      selected: "",
-      build_name: "",
-      weapon: "",
-      hero: "",
-      assist: "",
-      special: "",
-      passivea: "",
-      passiveb: "",
-      passivec: ""
+      passiveCSkills: []
     };
   },
   created: function() {
@@ -101,24 +96,27 @@ export default {
       console.log("All Heroes", response.data);
       this.heroes = response.data;
     });
+    axios.get(`/api/builds/${this.$route.params.id}`).then(response => {
+      this.build = response.data;
+      console.log(this.build);
+    });
   },
   methods: {
-    createBuild: function() {
+    updateBuild: function() {
       var params = {
-        name: this.build_name,
-        hero_name: this.hero,
-        weapon_skill_name: this.weapon,
-        assist: this.assist,
-        special: this.special,
-        passivea: this.passivea,
-        passiveb: this.passiveb,
-        passivec: this.passivec
+        name: this.build.name,
+        hero_name: this.build.hero_name,
+        weapon_skill_name: this.build.weapon_skill_name,
+        assist: this.build.assist,
+        special: this.build.special,
+        passivea: this.build.passivea,
+        passiveb: this.build.passiveb,
+        passivec: this.build.passivec
       };
       axios
-        .post("/api/builds", params)
+        .patch(`api/builds/${this.build.id}`, params)
         .then(response => {
-          console.log("Success", response.data);
-          this.builds.push(response.data);
+          this.$router.push(`/builds/${response.data.id}`);
         })
         .catch(error => {
           this.errors = error.response.data.errors;
