@@ -1,6 +1,81 @@
 <template>
   <div id="app">
-    <div id="nav">
+     <div class="site-header-affix-wrapper">
+        <header id="masthead" class="site-header header-dark" role="banner">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="site-branding">
+                  <!-- //site-title when you use logo image.
+                  <h1 class="site-title title-image"><a href="index.html" rel="home"><img src="assets/img/danish-image-logo.png" alt="Danish."></a></h1>
+                  -->
+                  <h1 class="site-title"><a href="index.html" rel="home">Danish.</a></h1>
+                  <!-- //site-description if you wanna use it.
+                  <p class="site-description">Traveler and Young Designer //</p>
+                  -->
+                </div><!-- .site-branding -->
+              </div><!-- .col-sm-4 -->
+
+              <div class="col-sm-9">
+                <nav id="site-navigation" class="main-navigation" role="navigation">
+                  <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><i class="fa fa-align-left"></i><span class="sr-only">Primary Menu</span></button>
+
+                  <div class="menu-testing-menu-container">
+                    <ul id="primary-menu" class="menu nav-menu" aria-expanded="false">
+                      <li class="menu-item menu-item-has-children" aria-haspopup="true"><a href="#">Home</a>
+                        <ul class="sub-menu">
+                          <li class="menu-item"><a href="index.html">Home classic</a></li>
+                          <li class="menu-item"><a href="index-classic-fullwidth.html">Home classic fullwidth</a></li>
+                          <li class="menu-item"><a href="index-classic-fullwidth-alt.html">Home classic fullwidth alt.</a></li>
+                          <li class="menu-item"><a href="index-grid-fullwidth.html">Home grid fullwidth</a></li>
+                          <li class="menu-item"><a href="index-grid-sidebar.html">Home grid sidebar</a></li>
+                          <li class="menu-item"><a href="index-list-fullwidth.html">Home list fullwidth</a></li>
+                          <li class="menu-item"><a href="index-list-sidebar.html">Home list sidebar</a></li>
+                        </ul>
+                      </li>
+                      <li class="menu-item"><a href="about.html">About</a></li>
+                      <li class="menu-item"><a href="contact.html">Contact</a></li>
+                      <li class="menu-item menu-item-has-children" aria-haspopup="true"><a href="#">Blog</a>
+                        <ul class="sub-menu">
+                          <li class="menu-item"><a href="post-format.html">Post Formats</a></li>
+                          <li class="menu-item"><a href="#">Post Single</a>
+                            <ul class="sub-menu">
+                              <li class="menu-item"><a href="single.html">Single</a></li>
+                              <li class="menu-item"><a href="single-quote.html">Single Quote</a></li>
+                              <li class="menu-item"><a href="single-gallery.html">Single Gallery</a></li>
+                              <li class="menu-item"><a href="single-video.html">Single Video</a></li>
+                              <li class="menu-item"><a href="single-audio.html">Single Audio</a></li>
+                              <li class="menu-item"><a href="single-image.html">Single Image</a></li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="menu-item menu-item-has-children" aria-haspopup="true"><a href="#">Portfolio</a>
+                        <ul class="sub-menu">
+                          <li class="menu-item"><a href="portfolio.html">Portfolio</a></li>
+                          <li class="menu-item"><a href="single-portfolio.html">Portfolio Single</a></li>
+                          <li class="menu-item"><a href="archive-portfolio.html">Portfolio Archive</a></li>
+                        </ul>
+                      </li>
+                      <li class="menu-item menu-item-has-children" aria-haspopup="true"><a href="#">Pages</a>
+                        <ul class="sub-menu">
+                          <li class="menu-item"><a href="archive.html">Archive</a></li>
+                          <li class="menu-item"><a href="category.html">Category</a></li>
+                          <li class="menu-item"><a href="search.html">Search</a></li>
+                          <li class="menu-item"><a href="page.html">Page</a></li>
+                          <li class="menu-item"><a href="404.html">404 Page</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                </nav><!-- #site-navigation -->
+              </div><!-- .col-sm-8 -->
+            </div><!-- .row -->
+          </div><!-- .container -->
+        </header><!-- #masthead -->
+      </div><!-- .site-header-affix-wrapper -->
+
+    <!-- <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/builds">Builds List</router-link> |
       <router-link v-if="!isLoggedIn()" to="/signup">Signup</router-link> |
@@ -9,8 +84,10 @@
       <router-link to="/heroes">Heroes List</router-link> |
       <router-link to="/skills">Skills List</router-link> |
       <router-link v-if="isLoggedIn()" to="/users/me">User Info</router-link> 
-    </div>
+    </div> -->
     <router-view/>
+
+    
   </div>
 </template>
 
