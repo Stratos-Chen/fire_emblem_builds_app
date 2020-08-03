@@ -24,7 +24,7 @@
                     <ul id="primary-menu" class="menu nav-menu" aria-expanded="false">
                       <li class="menu-item menu-item-has-children" aria-haspopup="true"><a href="#">Home</a>
                         <ul class="sub-menu">
-                          <li class="menu-item"><a href="index.html">Home classic</a></li>
+                          <li class="menu-item"><a href="/">Home </a></li>
                           <li class="menu-item"><a href="index-classic-fullwidth.html">Home classic fullwidth</a></li>
                           <li class="menu-item"><a href="index-classic-fullwidth-alt.html">Home classic fullwidth alt.</a></li>
                           <li class="menu-item"><a href="index-grid-fullwidth.html">Home grid fullwidth</a></li>
@@ -33,8 +33,9 @@
                           <li class="menu-item"><a href="index-list-sidebar.html">Home list sidebar</a></li>
                         </ul>
                       </li>
-                      <li class="menu-item"><a href="about.html">About</a></li>
-                      <li class="menu-item"><a href="contact.html">Contact</a></li>
+                      <li class="menu-item"><a href="/builds">Builds List</a></li>
+                      <li class="menu-item"><a href="/heroes">Heroes List</a></li>
+                      <li class="menu-item"><a href="/skills">Skills List</a></li>
                       <li class="menu-item menu-item-has-children" aria-haspopup="true"><a href="#">Blog</a>
                         <ul class="sub-menu">
                           <li class="menu-item"><a href="post-format.html">Post Formats</a></li>
@@ -57,13 +58,12 @@
                           <li class="menu-item"><a href="archive-portfolio.html">Portfolio Archive</a></li>
                         </ul>
                       </li>
-                      <li class="menu-item menu-item-has-children" aria-haspopup="true"><a href="#">Pages</a>
+                      <li class="menu-item menu-item-has-children" aria-haspopup="true"><a href="#">Users</a>
                         <ul class="sub-menu">
-                          <li class="menu-item"><a href="archive.html">Archive</a></li>
-                          <li class="menu-item"><a href="category.html">Category</a></li>
-                          <li class="menu-item"><a href="search.html">Search</a></li>
-                          <li class="menu-item"><a href="page.html">Page</a></li>
-                          <li class="menu-item"><a href="404.html">404 Page</a></li>
+                          <li class="menu-item" v-if="!isLoggedIn()"><a href="/signup">Signup</a></li>
+                          <li class="menu-item" v-if="!isLoggedIn()"><a href="/login">Login</a></li>
+                          <li class="menu-item" v-if="isLoggedIn()"><a href="/logout">Logout</a></li>
+                          <li class="menu-item" v-if="isLoggedIn()"><a href="/users/me">User Info</a></li>
                         </ul>
                       </li>
                     </ul>
