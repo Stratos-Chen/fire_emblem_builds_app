@@ -13,11 +13,11 @@
           {{ heroe.name }}
         </option>
       </select> <br>
-      <!-- HP: {{ hero.hp}}<br>
-      Attack: {{ hero.atk + weapon.might }}<br>
-      Speed: {{ hero.spd }}<br>
-      Defense: {{ hero.def }}<br>
-      Resistance: {{ hero.res }}<br> -->
+      HP: {{ build.hero_name.hp}}<br>
+      Attack: {{ build.hero_name.atk }}<br>
+      Speed: {{ build.hero_name.spd }}<br>
+      Defense: {{ build.hero_name.def }}<br>
+      Resistance: {{ build.hero_name.res }}<br>
       Weapon Skill:
       <select v-model="build.weapon_skill_name">
         <option v-for="weaponSkill in weaponSkills" v-bind:weapon_skill="weaponSkill.name">
