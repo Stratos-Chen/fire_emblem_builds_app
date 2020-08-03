@@ -25,7 +25,7 @@
       <script src="js/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body class="home blog">
+  <body class="archive date">
     <div id="page" class="site">
       <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
 
@@ -105,50 +105,18 @@
       </div><!-- .site-header-affix-wrapper -->
 
       <!-- #header -->
-      <section id="header" style="background-image: url('assets/img/danish-image-header.jpg');">
+      <section id="header" class="heading" style="background-image: url('assets/img/danish-image-header.jpg');">
         <div class="container">
           <div class="row">
             <div class="col-md-8 col-md-offset-2">
-              <blockquote>
-                <p>Mendapatkan hati wanita cantik itu tidak mudah, apalagi jika kamu tidak terlalu lucu ~</p>
-                <small>Tarjono</small>
-              </blockquote>
+              <div class="title-desc">
+                <h2>Archive Monthly: May 2016 <span>//</span></h2>
+              </div>
             </div>
           </div>
         </div>
         <div class="overlay"></div>
       </section><!-- #header -->
-
-      <!-- featured -->
-      <div id="featured" class="section-featured">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-4">
-              <div class="featured-container">
-                <div class="featured-img" style="background-image: url('assets/img/danish-image-category-01.jpg');">
-                  <h3><a href="#">Travel</a></h3>
-                </div><!-- .featured-img -->
-              </div><!-- .featured-container -->
-            </div><!-- .col-sm-4 -->
-
-            <div class="col-sm-4">
-              <div class="featured-container">
-                <div class="featured-img" style="background-image: url('assets/img/danish-image-category-02.jpg');">
-                  <h3><a href="#">Nature</a></h3>
-                </div><!-- .featured-img -->
-              </div><!-- .featured-container -->
-            </div><!-- .col-sm-4 -->
-
-            <div class="col-sm-4">
-              <div class="featured-container">
-                <div class="featured-img" style="background-image: url('assets/img/danish-image-category-03.jpg');">
-                  <h3><a href="#">Love life</a></h3>
-                </div><!-- .featured-img -->
-              </div><!-- .featured-container -->
-            </div><!-- .col-sm-4 -->
-          </div><!-- .row -->
-        </div><!-- .container -->
-      </div><!-- #featured -->
 
       <!-- content -->
       <div id="content" class="site-content">
@@ -157,7 +125,11 @@
 
             <div class="container">
               <div class="row">
-                <div class="col-md-8 page-default">
+                <div class="col-md-8">
+                  <header class="page-header">
+                    <h1 class="page-title">Archive Monthly: May 2016</h1>
+                  </header>
+         
                   <article class="post format-standard hentry">
                     <div class="post-container">
                       <div class="post-content">
@@ -239,12 +211,15 @@
                     </div><!-- .post-container -->
                   </article><!-- .post -->
 
-                  <nav class="navigation posts-navigation" role="navigation">
+                  <nav class="navigation pagination" role="navigation">
                     <h2 class="screen-reader-text">Posts navigation</h2>
                     <div class="nav-links">
-                      <div class="nav-previous"><a href="#">Older posts</a></div>
-                      <div class="nav-next"><a href="#">Newer posts</a></div>
-                    </div>
+                      <span class="page-numbers current">1</span>
+                      <a class="page-numbers" href="#">2</a>
+                      <span class="page-numbers dots">…</span>
+                      <a class="page-numbers" href="#">4</a>
+                      <a class="next page-numbers" href="#">Next</a>
+                    </div><!-- .nav-links -->
                   </nav><!-- .navigation -->
                 </div><!-- .col-md-8 -->
 
@@ -403,6 +378,7 @@
                       <a href="archive.html">dowork</a> <a href="archive.html">mothership</a>
                     </div>
                   </section><!-- .widget_tag_cloud -->
+
                 </div><!-- .col-md-4 -->
               </div><!-- .row -->
             </div><!-- .container -->
