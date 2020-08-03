@@ -34,13 +34,18 @@ export default {
     return {
       errors: [],
       builds: [],
-      nameFilter: ""
+      nameFilter: "",
+      name: ""
     };
   },
   created: function() {
     axios.get("/api/builds").then(response => {
       console.log("All Builds:", response.data);
       this.builds = response.data;
+    });
+    axios.get("/api/heroes").then(response => {
+      console.log("All Heroes", response.data);
+      this.heroes = response.data;
     });
   },
   methods: {}

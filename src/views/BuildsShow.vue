@@ -23,13 +23,18 @@ export default {
   data: function() {
     return {
       errors: [],
-      build: {}
+      build: {},
+      heroes: []
     };
   },
   created: function() {
     axios.get(`/api/builds/${this.$route.params.id}`).then(response => {
       console.log(response.data);
       this.build = response.data;
+    });
+    axios.get("/api/heroes").then(response => {
+      console.log("All Heroes", response.data);
+      this.heroes = response.data;
     });
   },
   methods: {
