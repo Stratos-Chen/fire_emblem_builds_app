@@ -17,7 +17,6 @@
         <li>Def: {{ heroe.def }}</li>
         <li>Res: {{ heroe.res }}</li>
       </ul>
-      <router-link v-bind:to="`/builds/new`">Select Hero</router-link> |
       <router-link v-bind:to="`/heroes/${heroe.name}`">Showcase Info</router-link>
     </div>
   </div>
