@@ -128,7 +128,7 @@
               <section class="widget danish_widget_site_info">
                 <div class="site-info">
                   <h4 class="site-brand"><i class="fa fa-recycle"></i> FeH Builder</h4> 
-                  <p>1024 Main Street, Jjrn Plrt Btl<br>+62 (123) 456-7890</p>
+                  <p>Steven Chen<br>insert phone number here</p>
                   <br>
                   <p class="muted">© 2016 Brand Inc.</p>
                   <a href="#">Terms of Service</a> <span>/</span> <a href="#">Privacy</a>

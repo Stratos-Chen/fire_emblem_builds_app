@@ -90,12 +90,12 @@ export default {
       special: "",
       passivea: "",
       passiveb: "",
-      passivec: "",
-      hp: "",
-      attack: "",
-      speed: "",
-      defense: "",
-      resistance: ""
+      passivec: ""
+      // hp: "",
+      // attack: "",
+      // speed: "",
+      // defense: "",
+      // resistance: ""
     };
   },
   created: function() {
@@ -129,12 +129,12 @@ export default {
         special: this.special.name,
         passivea: this.passivea.name,
         passiveb: this.passiveb.name,
-        passivec: this.passivec.name,
-        hp: this.hero.hp,
-        attack: this.hero.atk + this.weapon.might,
-        speed: this.hero.spd,
-        defense: this.hero.def,
-        resistance: this.hero.res
+        passivec: this.passivec.name
+        // hp: this.hero.hp,
+        // attack: this.hero.atk + this.weapon.might,
+        // speed: this.hero.spd,
+        // defense: this.hero.def,
+        // resistance: this.hero.res
       };
       axios
         .post("/api/builds", params)
