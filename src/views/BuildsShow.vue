@@ -27,7 +27,8 @@ export default {
     return {
       errors: [],
       build: {},
-      heroe: {}
+      heroe: {},
+      heroes: []
     };
   },
   created: function() {

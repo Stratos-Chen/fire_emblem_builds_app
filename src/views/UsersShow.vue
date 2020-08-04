@@ -3,7 +3,9 @@
     <h2>Username: {{ user.username }}</h2>
     <p>Email: {{ user.email }}</p>
     
-    <router-link :to="`/users/me/edit`">Update Information</router-link>
+    <router-link :to="`/users/me/edit`">Update Information</router-link> <br>
+
+    <button><router-link :to="`/builds`">Build List</router-link></button>
   </div>
 </template>
 
