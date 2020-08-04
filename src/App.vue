@@ -22,7 +22,7 @@
 
                   <div class="menu-testing-menu-container">
                     <ul id="primary-menu" class="menu nav-menu" aria-expanded="false">
-                      <li class="menu-item menu-item-has-children" aria-haspopup="true"><a href="#">Home</a>
+                      <!-- <li class="menu-item menu-item-has-children" aria-haspopup="true"><a href="#">Home</a>
                         <ul class="sub-menu">
                           <li class="menu-item"><a href="/">Home </a></li>
                           <li class="menu-item"><a href="index-classic-fullwidth.html">Home classic fullwidth</a></li>
@@ -32,11 +32,12 @@
                           <li class="menu-item"><a href="index-list-fullwidth.html">Home list fullwidth</a></li>
                           <li class="menu-item"><a href="index-list-sidebar.html">Home list sidebar</a></li>
                         </ul>
-                      </li>
+                      </li> -->
+                      <li class="menu-item"><a href="/">Home</a></li>
                       <li class="menu-item"><a href="/builds">Builds List</a></li>
                       <li class="menu-item"><a href="/heroes">Heroes List</a></li>
                       <li class="menu-item"><a href="/skills">Skills List</a></li>
-                      <li class="menu-item menu-item-has-children" aria-haspopup="true"><a href="#">Blog</a>
+                      <!-- <li class="menu-item menu-item-has-children" aria-haspopup="true"><a href="#">Blog</a>
                         <ul class="sub-menu">
                           <li class="menu-item"><a href="post-format.html">Post Formats</a></li>
                           <li class="menu-item"><a href="#">Post Single</a>
@@ -57,7 +58,7 @@
                           <li class="menu-item"><a href="single-portfolio.html">Portfolio Single</a></li>
                           <li class="menu-item"><a href="archive-portfolio.html">Portfolio Archive</a></li>
                         </ul>
-                      </li>
+                      </li> -->
                       <li class="menu-item menu-item-has-children" aria-haspopup="true"><a href="#">Users</a>
                         <ul class="sub-menu">
                           <li class="menu-item" v-if="!isLoggedIn()"><a href="/signup">Signup</a></li>
