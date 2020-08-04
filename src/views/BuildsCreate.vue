@@ -90,7 +90,12 @@ export default {
       special: "",
       passivea: "",
       passiveb: "",
-      passivec: ""
+      passivec: "",
+      hp: "",
+      attack: "",
+      speed: "",
+      defense: "",
+      resistance: ""
     };
   },
   created: function() {
