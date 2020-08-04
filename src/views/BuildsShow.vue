@@ -2,9 +2,9 @@
   <div class="builds-show">
     <h2>{{ build.name }}</h2>
     <p>Hero: {{ build.hero_name }}</p>
-    <!-- <ul>
-      <li>HP: {{ heroes.[build.hero_name].}}
-    </ul> -->
+    <ul>
+      <li>HP: {{ build.hp }}</li>
+    </ul>
     <p>Weapon: {{ build.weapon_skill_name }}</p>
     <p>Assist: {{ build.assist }}</p>
     <p>Special: {{ build.special }}</p>

@@ -96,10 +96,10 @@
               <section class="widget widget_tag_cloud">
                 <h3 class="widget-title">Tags</h3>
                 <div class="tagcloud">
-                  <a href="archive.html">beauty</a> <a href="archive.html">destiny</a>
+                  <!-- <a href="archive.html">beauty</a> <a href="archive.html">destiny</a>
                   <a href="archive.html">happy</a> <a href="archive.html">inspiring</a>
                   <a href="archive.html">live</a> <a href="archive.html">love live</a>
-                  <a href="archive.html">tips</a> <a href="archive.html">captions</a>
+                  <a href="archive.html">tips</a> <a href="archive.html">captions</a> -->
                 </div>
               </section><!-- .widget_tag_cloud -->
             </div><!-- .col-sm-3 -->
@@ -107,7 +107,7 @@
             <div class="col-sm-3">
               <section class="widget widget_recent_entries">
                 <h3 class="widget-title">Headline</h3>
-                <ul>
+                <!-- <ul>
                   <li>
                     <a href="single.html">Beauty is not just what you see</a>
                     <span class="post-date">May 19, 2016</span>
@@ -120,14 +120,14 @@
                     <a href="single.html">You never know how beautiful you are</a>
                     <span class="post-date">May 5, 2016</span>
                   </li>
-                </ul>
+                </ul> -->
               </section><!-- .widget_recent_entries -->
             </div><!-- .col-sm-3 -->
 
             <div class="col-sm-6">
               <section class="widget danish_widget_site_info">
                 <div class="site-info">
-                  <h4 class="site-brand"><i class="fa fa-recycle"></i> Danish.</h4>
+                  <h4 class="site-brand"><i class="fa fa-recycle"></i> FeH Builder</h4> 
                   <p>1024 Main Street, Jjrn Plrt Btl<br>+62 (123) 456-7890</p>
                   <br>
                   <p class="muted">© 2016 Brand Inc.</p>
