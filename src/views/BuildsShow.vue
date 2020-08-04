@@ -2,6 +2,9 @@
   <div class="builds-show">
     <h2>{{ build.name }}</h2>
     <p>Hero: {{ build.hero_name }}</p>
+    <!-- <ul>
+      <li>HP: {{ heroes.[build.hero_name].}}
+    </ul> -->
     <p>Weapon: {{ build.weapon_skill_name }}</p>
     <p>Assist: {{ build.assist }}</p>
     <p>Special: {{ build.special }}</p>
@@ -24,7 +27,7 @@ export default {
     return {
       errors: [],
       build: {},
-      heroes: []
+      heroe: {}
     };
   },
   created: function() {
@@ -32,10 +35,10 @@ export default {
       console.log(response.data);
       this.build = response.data;
     });
-    axios.get("/api/heroes").then(response => {
-      console.log("All Heroes", response.data);
-      this.heroes = response.data;
-    });
+    // axios.get(`/api/heroes/${this.build.hero_name}`).then(response => {
+    //   console.log(response.data);
+    //   this.heroe = response.data;
+    // });
   },
   methods: {
     destroyBuild: function() {
@@ -46,6 +49,17 @@ export default {
         });
       }
     }
+    //   displayHP: function() {
+    //     heroes.each do |hero| {
+    //       if (build["hero_name"] === hero["name"]) {
+    //         return hero["stats"]["40"]["5"]["hp"][1];
+    //       }
+    //     }
+    //   },
+    //   displayAttack: function() {},
+    //   displaySpeed: function() {},
+    //   displayDefense: function() {},
+    //   displayResistance: function() {}
   }
 };
 </script>

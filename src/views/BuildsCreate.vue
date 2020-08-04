@@ -130,7 +130,7 @@ export default {
         .post("/api/builds", params)
         .then(response => {
           console.log("Success", response.data);
-          this.builds.push(response.data);
+          this.$router.push("/builds");
         })
         .catch(error => {
           this.errors = error.response.data.errors;
