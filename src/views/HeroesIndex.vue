@@ -18,17 +18,11 @@
       </div>
     </div>
     <div class="col-md-4">
-      <label> Search By Name: </label>
-      <section class="widget widget_search">
-        <form role="search" method="get" class="search-form" action="">
-          <label>
-            <span class="screen-reader-text">Search for:</span>
-            <input class="search-field" v-model="nameFilter" list="names" type="search" placeholder="Search ..." value="">
-          </label>
-        </form>
+      <label> Search By Name: </label> 
+      <section>
+        <input class="search-field" v-model="nameFilter" list="names" type="text" placeholder="Search ..." value="">
       </section>
     </div>
-    
   </div>
 </template>
 

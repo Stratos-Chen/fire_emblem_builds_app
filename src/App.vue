@@ -142,6 +142,9 @@
 </template>
 
 <style>
+div {
+  color: red;
+}
 </style>
 <script>
 export default {
