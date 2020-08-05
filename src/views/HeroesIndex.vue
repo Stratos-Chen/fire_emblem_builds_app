@@ -13,9 +13,9 @@
                     <form role="search" method="get" class="search-form" action="">
                     <label>
                       <span class="screen-reader-text">Search for:</span>
-                      <input type="search" class="search-field" placeholder="Search …" value="" name="s" title="Search for:">
+                      <input type="search" v-model="nameFilter" class="search-field" placeholder="Search …" value="" title="Search for:">
                     </label>
-                    <input v-model="nameFilter" type="submit" class="search-submit" value="Search">
+                    <input type="submit" class="search-submit" value="Search">
                     </form><!-- search-form -->
                   </section><!-- .widget_search -->
                 </div><!-- .col-md-4 -->  
