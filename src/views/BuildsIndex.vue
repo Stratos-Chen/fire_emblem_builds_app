@@ -12,9 +12,8 @@
                     <form role="search" method="get" class="search-form" action="">
                     <label>
                       <span class="screen-reader-text">Search for:</span>
-                      <input type="search" v-model="nameFilter" class="search-field" placeholder="Search …" value="" title="Search for:">
+                      <input type="search" v-model="nameFilter" class="form-control" placeholder="Search …">
                     </label>
-                    <input type="submit" class="search-submit" value="Search">
                     </form><!-- search-form -->
                   </section><!-- .widget_search -->
                 </div><!-- .col-md-4 -->  
@@ -23,7 +22,7 @@
                     <h1 class="page-title">Build List</h1>
                   </header>
          
-                  <article v-for="build in filterBy(builds, nameFilter, 'name')" class="post format-standard hentry">
+                  <article v-for="build in filterBy(builds, nameFilter, 'hero_name')" class="post format-standard hentry">
                     <div class="post-container">
                       <div class="post-content">
                         <div class="heading-title heading-small">

@@ -142,8 +142,8 @@
 </template>
 
 <style>
-h2 {
-  color: blue;
+div {
+  color: blueviolet;
 }
 </style>
 <script>
