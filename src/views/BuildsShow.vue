@@ -2,9 +2,11 @@
   <div class="builds-show">
     <h2>{{ build.name }}</h2>
     <p>Hero: {{ build.hero_name }}</p>
-    <ul>
-      <li>HP: {{ build.hp }}</li>
-    </ul>
+    <div v-if="heroe">
+      <ul>
+        <li>HP: {{ heroe.hp }}</li>
+      </ul>
+    </div>
     <p>Weapon: {{ build.weapon_skill_name }}</p>
     <p>Assist: {{ build.assist }}</p>
     <p>Special: {{ build.special }}</p>
@@ -27,19 +29,18 @@ export default {
     return {
       errors: [],
       build: {},
-      heroe: {},
-      heroes: []
+      heroe: {}
     };
   },
   created: function() {
     axios.get(`/api/builds/${this.$route.params.id}`).then(response => {
       console.log(response.data);
       this.build = response.data;
+      axios.get(`/api/heroes/${this.build.hero_name}`).then(response => {
+        console.log(response.data);
+        this.heroe = response.data;
+      });
     });
-    // axios.get(`/api/heroes/${this.build.hero_name}`).then(response => {
-    //   console.log(response.data);
-    //   this.heroe = response.data;
-    // });
   },
   methods: {
     destroyBuild: function() {
