@@ -142,6 +142,9 @@
 </template>
 
 <style>
+h2 {
+  color: blue;
+}
 </style>
 <script>
 export default {
