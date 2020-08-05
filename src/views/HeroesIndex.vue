@@ -4,35 +4,10 @@
       <div id="content" class="site-content">
         <div id="primary" class="content-area">
           <main id="main" class="site-main" role="main">
+            
 
             <div class="container">
               <div class="row">
-                <div class="col-md-8">
-                  <header class="page-header">
-                    <h1 class="page-title">Archive Monthly: May 2016</h1>
-                  </header>
-         
-                  <article v-for="heroe in filterBy(heroes, nameFilter, 'name')" class="post format-standard hentry">
-                    <div class="post-container">
-                      <div class="post-content">
-                        <img src="assets/img/danish-image-post-04.jpg" alt="I will leave you asap">
-                        <div class="heading-title heading-small">
-                          <h2><a href="single.html" rel="bookmark">{{ heroe.name }}</a></h2>
-                        </div><!-- .heading-small -->
-                          <p>Origin game: {{ heroe.origin }}</p>
-                          <p>Weapon type: {{ heroe.weaponType }}</p>
-                          <p>Movement Type: {{ heroe.moveType }}</p>
-                          <p>HP: {{ heroe.hp }}</p>
-                          <p>Atk: {{ heroe.atk }}</p>
-                          <p>Spd: {{ heroe.spd }}</p>
-                          <p>Def: {{ heroe.def }}</p>
-                          <p>Res: {{ heroe.res }}</p>
-                      </div><!-- .post-content -->
-                    </div><!-- .post-container -->
-                  </article><!-- .post -->
-
-                </div><!-- .col-md-8 -->
-
                 <div class="col-md-4">
                   <section class="widget widget_search">
                     <form role="search" method="get" class="search-form" action="">
@@ -40,11 +15,35 @@
                       <span class="screen-reader-text">Search for:</span>
                       <input type="search" class="search-field" placeholder="Search …" value="" name="s" title="Search for:">
                     </label>
-                    <input type="submit" class="search-submit" value="Search">
+                    <input v-model="nameFilter" type="submit" class="search-submit" value="Search">
                     </form><!-- search-form -->
                   </section><!-- .widget_search -->
+                </div><!-- .col-md-4 -->  
+                <div class="col-md-8">
+                  <header class="page-header">
+                    <h1 class="page-title">Hero List</h1>
+                  </header>
+         
+                  <article v-for="heroe in filterBy(heroes, nameFilter, 'name')" class="post format-standard hentry">
+                    <div class="post-container">
+                      <div class="post-content">
+                        <div class="heading-title heading-small">
+                          <h2><router-link v-bind:to="`/heroes/${heroe.name}`">{{ heroe.name }}</router-link></h2>
+                        </div><!-- .heading-small -->
+                        <p>Origin game: {{ heroe.origin }}</p>
+                        <p>Weapon type: {{ heroe.weaponType }}</p>
+                        <p>Movement Type: {{ heroe.moveType }}</p>
+                        <p>HP: {{ heroe.hp }}</p>
+                        <p>Atk: {{ heroe.atk }}</p>
+                        <p>Spd: {{ heroe.spd }}</p>
+                        <p>Def: {{ heroe.def }}</p>
+                        <p>Res: {{ heroe.res }}</p>
+                      </div><!-- .post-content -->
+                    </div><!-- .post-container -->
+                  </article><!-- .post -->
 
-                </div><!-- .col-md-4 -->
+                </div><!-- .col-md-8 -->
+              
               </div><!-- .row -->
             </div><!-- .container -->
 
