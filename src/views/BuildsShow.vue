@@ -1,61 +1,75 @@
 <template>
   <div class="builds-show">
     <!-- content -->
-      <div id="content" class="site-content">
-        <div id="primary" class="content-area">
-          <main id="main" class="site-main" role="main">
+    <div id="content" class="site-content">
+      <div id="primary" class="content-area">
+        <main id="main" class="site-main" role="main">
 
-            <div class="container">
-              <div class="row">
-                <div class="col-md-8">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-8">
 
-                  <div class="entry-author-bio">
-                    <div class="author-bio-avatar">
-                      <!-- <img alt="avatar" src="assets/img/danish-image-post-thumbnail-02.jpg" class="avatar avatar-80 photo" height="80" width="80"> -->
-                    </div><!-- .author-bio-avatar -->
-                    <div class="author-bio-description">
-                      <h2>Build Name: {{ build.name }}</h2>
-                      <h4>Hero: {{ build.hero_name }}</h4>
-                      <p>Weapon: {{ build.weapon_skill_name }}</p>
-                      <p>Assist: {{ build.assist }}</p>
-                      <p>Special: {{ build.special }}</p>
-                      <p>Passive A: {{ build.passivea }}</p>
-                      <p>Passive B: {{ build.passiveb }}</p>
-                      <p>Passive C: {{ build.passivec }}</p>
-                    </div><!-- .author-bio-description -->
-                  </div><!-- .entry-author-bio -->
+                <div class="entry-author-bio">
+                  <div class="author-bio-avatar">
+                    <!-- <img alt="avatar" src="assets/img/danish-image-post-thumbnail-02.jpg" class="avatar avatar-80 photo" height="80" width="80"> -->
+                  </div><!-- .author-bio-avatar -->
+                  <div class="author-bio-description">
+                    <h2>Build Name: {{ build.name }}</h2>
+                    <h4>Hero: {{ build.hero_name }}</h4>
+                    <p>Weapon: {{ build.weapon_skill_name }}</p>
+                    <p>Assist: {{ build.assist }}</p>
+                    <p>Special: {{ build.special }}</p>
+                    <p>Passive A: {{ build.passivea }}</p>
+                    <p>Passive B: {{ build.passiveb }}</p>
+                    <p>Passive C: {{ build.passivec }}</p>
+                  </div><!-- .author-bio-description -->
+                </div><!-- .entry-author-bio -->
 
-                  <nav class="navigation post-navigation" role="navigation">
-                    <h2 class="screen-reader-text">Post navigation</h2>
-                    <div class="build-links">
-                      <router-link :to="`/builds/${build.id}/edit`"><input name="update" class="btn btn-danish btn-lg btn-block" value="Update"></router-link> <br>
-                      <input name="submit" class="btn btn-danish btn-lg btn-block" value="Delete" v-on:click="destroyBuild()"> <br>
-                    </div>
-                  </nav><!-- .navigation -->
-                </div><!-- .col-md-8 -->
+                <nav class="navigation post-navigation" role="navigation">
+                  <h2 class="screen-reader-text">Post navigation</h2>
+                  <div class="build-links">
+                    <router-link :to="`/builds/${build.id}/edit`"><input name="update" class="btn btn-danish btn-lg btn-block" value="Update"></router-link> <br>
+                    <input name="submit" class="btn btn-danish btn-lg btn-block" value="Delete" v-on:click="destroyBuild()"> <br>
+                  </div>
+                </nav><!-- .navigation -->
+              </div><!-- .col-md-8 -->
 
-                <div class="col-md-4">
+              <div class="col-md-4">
 
 
-                  <section class="widget danish_widget_about">
-                    <div class="about-author-container">
-                      <!-- <img src="assets/img/danish-image-about.jpg" alt="Danish Brown"> -->
-                      <div class="about-author-info">
-                        <h2 class="widget-title">Danish Brown</h2>
-                        <span class="author-subtitle">Young Designer</span>
-                        <div class="author-description">
-                          <p>Hello i’m danish. I’m 23 years old. I’m a girl who has long hair, big eyes with nice eyebrows, big…</p>
-                        </div><!-- .author-description -->
-                      </div><!-- .about-author-info -->
-                    </div><!-- .about-author-container -->
-                  </section><!-- .danish_widget_about -->
-                </div><!-- .col-md-4 -->
-              </div><!-- .row -->
-            </div><!-- .container -->
+                <section class="widget danish_widget_about">
+                  <div class="about-author-container">
+                    <!-- <img src="assets/img/danish-image-about.jpg" alt="Danish Brown"> -->
+                    <div class="about-author-info">
+                      <h2 class="widget-title">Stats:</h2>
+                      <div class="author-description" v-if="heroe">
+                        <p>HP: {{ heroe.hp }}</p>
+                        <p>Attack: {{ heroe.atk }}</p>
+                        <p>Speed: {{ heroe.spd }}</p>
+                        <p>Defense: {{ heroe.def }}</p>
+                        <p>Resistance: {{ heroe.res }}</p>
+                      </div><!-- .author-description -->
+                    </div><!-- .about-author-info -->
+                  </div><!-- .about-author-container -->
+                </section><!-- .danish_widget_about -->
+                <section class="widget danish_widget_about">
+                  <div class="about-author-container">
+                    <!-- <img src="assets/img/danish-image-about.jpg" alt="Danish Brown"> -->
+                    <div class="about-author-info">
+                      
+                      <div class="author-description" v-if="heroe">
+                        <img :src="heroe.image_url" alt="">
+                      </div><!-- .author-description -->
+                    </div><!-- .about-author-info -->
+                  </div><!-- .about-author-container -->
+                </section><!-- .danish_widget_about -->
+              </div><!-- .col-md-4 -->
+            </div><!-- .row -->
+          </div><!-- .container -->
 
-          </main><!-- #main -->
-        </div><!-- #primary -->
-      </div><!-- #content -->
+        </main><!-- #main -->
+      </div><!-- #primary -->
+    </div><!-- #content -->
     <!-- <h2>{{ build.name }}</h2>
     <p>Hero: {{ build.hero_name }}</p>
     <div v-if="heroe">

@@ -15,6 +15,7 @@
                     <span class="screen-reader-text">Search for:</span>
                     <input type="search" v-model="nameFilter" class="search-field" placeholder="Search ...">
                   </label>
+                  <input type="submit" class="search-submit" value="Search">
                   </form>
                 </section>
               </div>
@@ -24,7 +25,7 @@
                 </header>
                 <article v-for="skill in filterBy(skills, nameFilter, 'name')" class="post format-standard hentry">
                   <div class="post-container">
-                    <div class="post=content">
+                    <div class="post-content">
                       <div class="heading-title heading-small">
                         <h2>{{ skill.name }}</h2>
                       </div>       

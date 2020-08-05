@@ -15,6 +15,7 @@
                       <span class="screen-reader-text">Search for:</span>
                       <input type="search" v-model="nameFilter" class="search-field" placeholder="Search …">
                     </label>
+                    <input type="submit" class="search-submit" value="Search">
                     </form><!-- search-form -->
                   </section><!-- .widget_search -->
                 </div><!-- .col-md-4 -->  
@@ -26,17 +27,28 @@
                   <article v-for="heroe in filterBy(heroes, nameFilter, 'name')" class="post format-standard hentry">
                     <div class="post-container">
                       <div class="post-content">
+                        
                         <div class="heading-title heading-small">
                           <h2><router-link v-bind:to="`/heroes/${heroe.name}`">{{ heroe.name }}</router-link></h2>
                         </div><!-- .heading-small -->
-                        <p>Origin game: {{ heroe.origin }}</p>
-                        <p>Weapon type: {{ heroe.weaponType }}</p>
-                        <p>Movement Type: {{ heroe.moveType }}</p>
-                        <p>HP: {{ heroe.hp }}</p>
-                        <p>Atk: {{ heroe.atk }}</p>
-                        <p>Spd: {{ heroe.spd }}</p>
-                        <p>Def: {{ heroe.def }}</p>
-                        <p>Res: {{ heroe.res }}</p>
+                        <div class="row">
+                          
+                          <div class="col-sm-6">
+                            <p>Origin game: {{ heroe.origin }}</p>
+                            <p>Weapon type: {{ heroe.weaponType }}</p>
+                            <p>Movement Type: {{ heroe.moveType }}</p>
+                            <p>HP: {{ heroe.hp }}</p>
+                            <p>Atk: {{ heroe.atk }}</p>
+                            <p>Spd: {{ heroe.spd }}</p>
+                            <p>Def: {{ heroe.def }}</p>
+                            <p>Res: {{ heroe.res }}</p>
+                          </div>
+                          <div class="col-sm-6">
+                            <img :src="heroe.image_url" alt="">
+                          </div>
+                        </div>
+                        
+                        
                       </div><!-- .post-content -->
                     </div><!-- .post-container -->
                   </article><!-- .post -->

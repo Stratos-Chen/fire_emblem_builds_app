@@ -1,98 +1,86 @@
 <template>
   <div class="build create">
+    <!-- content -->
     <div id="content" class="site-content">
-        <div id="primary" class="content-area">
-          <main id="main" class="site-main" role="main">
-            <!-- map -->
-            <div class="display info"></div><!-- .map -->
-            <div class="container">
-              <div class="row">
-                <div class="createBuild">
-                  <h3>Send Message</h3>
-                  <p>If you wanna like to contact me, please fill the form bellow.</p>
-                  <form class="comment-form">
-                    <div class="row">
-                      <div class="col-md-6">
-                        <input type="text" class="form-control" placeholder="Enter Your Name : ">
-                        <input type="email" class="form-control" placeholder="Enter Your Email : ">
-                        <input type="text" class="form-control" placeholder="Enter Your Subject : ">
-                      </div><!-- .col-md-6 -->
-                      <div class="col-md-6">
-                        <textarea class="form-control" rows="4" placeholder="Type Your Message : "></textarea>
-                        <input type="submit" class="btn btn-danish btn-lg btn-block">
-                      </div><!-- .col-md-6 -->
-                    </div><!-- .row -->
-                  </form><!-- .comment-form -->
-                </div><!-- .col-sm-9 -->
-              </div><!-- .row -->
-            </div><!-- .container -->
+      <div id="primary" class="content-area">
+        <main id="main" class="site-main" role="main">
+          
 
-          </main><!-- #main -->
-        </div><!-- #primary -->
-      </div><!-- #content -->
-    <!-- <form v-on:submit.prevent="createBuild()">
-      <h1>Create a build</h1>
-      <ul>
-        <li class="text-danger" v-for="error in errors">{{ error }}</li>
-      </ul>
-      Build Name:
-      <input v-model="build_name" placeholder="input a build name"> <br>
-      Hero:
-      <select v-model="hero">
-        <option v-for="heroe in heroes" v-bind:value="heroe">
-          {{ heroe.name }}
-        </option> <br>
-      </select> <br>
-      HP: {{ hero.hp }}<br>
-      Attack: {{ hero.atk + weapon.might }}<br>
-      Speed: {{ hero.spd }}<br>
-      Defense: {{ hero.def }}<br>
-      Resistance: {{ hero.res }}<br>
-      Weapon Skill:
-      <select v-model="weapon">
-        <option v-for="weaponSkill in weaponSkills" v-bind:value="weaponSkill">
-          {{ weaponSkill.name }}
-        </option>
-      </select> <br>
-      effect: {{ weapon.effect }}<br>
-      might: {{ weapon.might }}<br>
-      Assist Skill:
-      <select v-model="assist">
-        <option v-for="assistSkill in assistSkills" v-bind:value="assistSkill">
-          {{ assistSkill.name }}
-        </option>
-      </select> <br>
-      effect: {{ assist.effect }}<br>
-      Special Skill:
-       <select v-model="special">
-        <option v-for="specialSkill in specialSkills" v-bind:value="specialSkill">
-          {{ specialSkill.name }}
-        </option>
-      </select> <br>
-      effect: {{ special.effect }}<br>
-      Passive A Skill:
-      <select v-model="passivea">
-        <option v-for="passiveASkill in passiveASkills" v-bind:value="passiveASkill">
-          {{ passiveASkill.name }}
-        </option>
-      </select> <br>
-      effect: {{ passivea.effect }}<br>
-      Passive B Skill:
-      <select v-model="passiveb">
-        <option v-for="passiveBSkill in passiveBSkills" v-bind:value="passiveBSkill">
-          {{ passiveBSkill.name }}
-        </option>
-      </select> <br>
-      effect: {{ passiveb.effect }}<br>
-      Passive C Skill:
-      <select v-model="passivec">
-        <option v-for="passiveCSkill in passiveCSkills" v-bind:value="passiveCSkill">
-          {{ passiveCSkill.name }}
-        </option>
-      </select> <br>
-      effect: {{ passivec.effect }}<br>
-      <input type="submit" class="btn btn-primary" value="Submit" />
-    </form> -->
+          <div class="container">
+            <div class="row">
+              
+
+              <div class="col-sm-12">
+                <h3>Create a build</h3>
+               
+                <form class="comment-form" v-on:submit.prevent="createBuild()">
+                  <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                      <input type="text" v-model="build_name"  class="form-control" placeholder="Enter Build Name : ">
+                      <select class="form-control" v-model="hero" name="archive-dropdown">
+                        <option value="">Select a Hero</option>
+                        <option v-for="heroe in heroes">
+                          {{ heroe.name }}
+                        </option>
+                      </select> 
+                      <select class="form-control" v-model="assist">
+                        <option value="">Select Assist Skill</option>
+                        <option v-for="assistSkill in assistSkills">
+                          {{ assistSkill.name }}
+                        </option>
+                      </select>
+                      <select class="form-control" v-model="special" name="archive-dropdown">
+                        <option value="">Select a Special Skill</option>
+                        <option v-for="specialSkill in specialSkills">
+                          {{ specialSkill.name }}
+                        </option>
+                      </select>
+                      
+                    </div><!-- .col-md-6 -->
+                    <div class="col-md-6 col-sm-6">
+                      <select class="form-control" v-model="weapon" name="archive-dropdown">
+                        <option value="">Select a Weapon</option>
+                        <option v-for="weaponSkill in weaponSkills">
+                          {{ weaponSkill.name }}
+                        </option>
+                      </select>
+                      <select class="form-control" v-model="passivea" name="archive-dropdown">
+                        <option value="">Select a passive A Skill</option>
+                        <option v-for="passiveASkill in passiveASkills">
+                          {{ passiveASkill.name }}
+                        </option>
+                      </select>
+                      <select class="form-control" v-model="passiveb" name="archive-dropdown">
+                        <option value="">Select a passive B Skill</option>
+                        <option v-for="passiveBSkill in passiveBSkills">
+                          {{ passiveBSkill.name }}
+                        </option>
+                      </select>
+                      <select class="form-control" v-model="passivec" name="archive-dropdown">
+                        <option value="">Select a passive C Skill</option>
+                        <option v-for="passiveCSkill in passiveCSkills">
+                          {{ passiveCSkill.name }}
+                        </option>
+                      </select>
+                      
+                    </div><!-- .col-md-6 -->
+                    
+                  </div><!-- .row -->
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <input type="submit" class="btn btn-danish btn-lg btn-block">
+                    </div>
+                  </div>
+                </form><!-- .comment-form -->
+              </div><!-- .col-sm-9 -->
+            </div><!-- .row -->
+          </div><!-- .container -->
+
+        </main><!-- #main -->
+      </div><!-- #primary -->
+    </div><!-- #content -->
+
+
   </div>
 </template>
 
@@ -153,13 +141,13 @@ export default {
     createBuild: function() {
       var params = {
         name: this.build_name,
-        hero_name: this.hero.name,
-        weapon_skill_name: this.weapon.name,
-        assist: this.assist.name,
-        special: this.special.name,
-        passivea: this.passivea.name,
-        passiveb: this.passiveb.name,
-        passivec: this.passivec.name
+        hero_name: this.hero,
+        weapon_skill_name: this.weapon,
+        assist: this.assist,
+        special: this.special,
+        passivea: this.passivea,
+        passiveb: this.passiveb,
+        passivec: this.passivec
         // hp: this.hero.hp,
         // attack: this.hero.atk + this.weapon.might,
         // speed: this.hero.spd,
