@@ -1,6 +1,36 @@
 <template>
   <div class="build create">
-    <form v-on:submit.prevent="createBuild()">
+    <div id="content" class="site-content">
+        <div id="primary" class="content-area">
+          <main id="main" class="site-main" role="main">
+            <!-- map -->
+            <div class="display info"></div><!-- .map -->
+            <div class="container">
+              <div class="row">
+                <div class="createBuild">
+                  <h3>Send Message</h3>
+                  <p>If you wanna like to contact me, please fill the form bellow.</p>
+                  <form class="comment-form">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <input type="text" class="form-control" placeholder="Enter Your Name : ">
+                        <input type="email" class="form-control" placeholder="Enter Your Email : ">
+                        <input type="text" class="form-control" placeholder="Enter Your Subject : ">
+                      </div><!-- .col-md-6 -->
+                      <div class="col-md-6">
+                        <textarea class="form-control" rows="4" placeholder="Type Your Message : "></textarea>
+                        <input type="submit" class="btn btn-danish btn-lg btn-block">
+                      </div><!-- .col-md-6 -->
+                    </div><!-- .row -->
+                  </form><!-- .comment-form -->
+                </div><!-- .col-sm-9 -->
+              </div><!-- .row -->
+            </div><!-- .container -->
+
+          </main><!-- #main -->
+        </div><!-- #primary -->
+      </div><!-- #content -->
+    <!-- <form v-on:submit.prevent="createBuild()">
       <h1>Create a build</h1>
       <ul>
         <li class="text-danger" v-for="error in errors">{{ error }}</li>
@@ -62,7 +92,7 @@
       </select> <br>
       effect: {{ passivec.effect }}<br>
       <input type="submit" class="btn btn-primary" value="Submit" />
-    </form>
+    </form> -->
   </div>
 </template>
 
