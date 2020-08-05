@@ -1,10 +1,9 @@
 <template>
   <div class="Index">
+    <router-link v-bind:to="`/builds/new`">Create New Build</router-link>
     <div id="content" class="site-content">
         <div id="primary" class="content-area">
           <main id="main" class="site-main" role="main">
-            
-
             <div class="container">
               <div class="row">
                 <div class="col-md-4">
@@ -14,6 +13,7 @@
                       <span class="screen-reader-text">Search for:</span>
                       <input type="search" v-model="nameFilter" class="form-control" placeholder="Search …">
                     </label>
+                    <input type="submit" class="search-submit" value="Search">
                     </form><!-- search-form -->
                   </section><!-- .widget_search -->
                 </div><!-- .col-md-4 -->  
