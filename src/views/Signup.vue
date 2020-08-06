@@ -19,9 +19,9 @@
                     <div class="col-md-6 col-sm-6">
                       <input
                         type="text"
-                        v-model="name"
+                        v-model="username"
                         class="form-control"
-                        placeholder="Name "
+                        placeholder="Username "
                       />
                       <input
                         type="email"
@@ -89,7 +89,7 @@ export default {
   methods: {
     submit: function() {
       var params = {
-        name: this.name,
+        username: this.username,
         email: this.email,
         password: this.password,
         password_confirmation: this.passwordConfirmation,
