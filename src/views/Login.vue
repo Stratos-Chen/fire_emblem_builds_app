@@ -1,20 +1,59 @@
 <template>
   <div class="login">
-    <form v-on:submit.prevent="submit()">
-      <h1>Login</h1>
-      <ul>
-        <li class="text-danger" v-for="error in errors">{{ error }}</li>
-      </ul>
-      <div class="form-group">
-        <label>Email:</label>
-        <input type="email" class="form-control" v-model="email">
+    <!-- content -->
+    <div id="content" class="site-content">
+      <div id="primary" class="content-area">
+        <main id="main" class="site-main" role="main">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-12">
+                <h3>Login</h3>
+
+                <form class="comment-form" v-on:submit.prevent="submit()">
+                  <ul>
+                    <li class="text-danger" v-for="error in errors">
+                      {{ error }}
+                    </li>
+                  </ul>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <input
+                        type="email"
+                        v-model="email"
+                        class="form-control"
+                        placeholder="Email "
+                      />
+                      <input
+                        type="password"
+                        v-model="password"
+                        class="form-control"
+                        placeholder="Password "
+                      />
+                    </div>
+                  </div>
+                  <!-- .row -->
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <input
+                        type="submit"
+                        class="btn btn-danish btn-lg btn-block"
+                      />
+                    </div>
+                  </div>
+                </form>
+                <!-- .comment-form -->
+              </div>
+              <!-- .col-sm-9 -->
+            </div>
+            <!-- .row -->
+          </div>
+          <!-- .container -->
+        </main>
+        <!-- #main -->
       </div>
-      <div class="form-group">
-        <label>Password:</label>
-        <input type="password" class="form-control" v-model="password">
-      </div>
-      <input type="submit" class="btn btn-primary" value="Submit">
-    </form>
+      <!-- #primary -->
+    </div>
+    <!-- #content -->
   </div>
 </template>
 
@@ -26,29 +65,29 @@ export default {
     return {
       email: "",
       password: "",
-      errors: []
+      errors: [],
     };
   },
   methods: {
     submit: function() {
       var params = {
         email: this.email,
-        password: this.password
+        password: this.password,
       };
       axios
         .post("/api/sessions", params)
-        .then(response => {
+        .then((response) => {
           axios.defaults.headers.common["Authorization"] =
             "Bearer " + response.data.jwt;
           localStorage.setItem("jwt", response.data.jwt);
           this.$router.push("/users/me");
         })
-        .catch(error => {
+        .catch((error) => {
           this.errors = ["Invalid email or password."];
           this.email = "";
           this.password = "";
         });
-    }
-  }
+    },
+  },
 };
 </script>
