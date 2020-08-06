@@ -15,14 +15,17 @@
 
                     <div class="row">
                       <div class="col-md-12">
-                        <a href="/users/me/edit" class="btn btn-lg btn-danish"
-                          >Update Information</a
+                        <router-link
+                          :to="`/users/me/edit`"
+                          class="btn btn-lg btn-danish btn-block"
+                          value="update"
+                          >Update Information</router-link
                         >
-                      </div>
-
-                      <div class="col-md-12">
-                        <a href="/builds" class="btn btn-lg btn-danish"
-                          >Build List</a
+                        <br />
+                        <router-link
+                          :to="`/builds`"
+                          class="btn btn-lg btn-danish btn-block"
+                          >Build List</router-link
                         >
                       </div>
                     </div>
