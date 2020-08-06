@@ -10,12 +10,21 @@
             <div class="row">
               <div class="col-md-4">
                 <section class="widget widget_search">
-                  <form role="search" method="get" class="search-form" action="">
-                  <label> 
-                    <span class="screen-reader-text">Search for:</span>
-                    <input type="search" v-model="nameFilter" class="search-field" placeholder="Search ...">
-                  </label>
-                  <input type="submit" class="search-submit" value="Search">
+                  <form
+                    role="search"
+                    method="get"
+                    class="search-form"
+                    action=""
+                  >
+                    <label>
+                      <span class="screen-reader-text">Search for:</span>
+                      <input
+                        type="search"
+                        v-model="nameFilter"
+                        class="search-field"
+                        placeholder="Search ..."
+                      />
+                    </label>
                   </form>
                 </section>
               </div>
@@ -23,14 +32,19 @@
                 <header class="page-header">
                   <h1 class="page-title">Skill list</h1>
                 </header>
-                <article v-for="skill in filterBy(skills, nameFilter, 'name')" class="post format-standard hentry">
+                <article
+                  v-for="skill in filterBy(skills, nameFilter, 'name')"
+                  class="post format-standard hentry"
+                >
                   <div class="post-container">
                     <div class="post-content">
                       <div class="heading-title heading-small">
                         <h2>{{ skill.name }}</h2>
-                      </div>       
+                      </div>
                       <p>Effect: {{ skill.effect }}</p>
-                      <p>Movement Restriction: {{ skill.movementRestriction}}</p>
+                      <p>
+                        Movement Restriction: {{ skill.movementRestriction }}
+                      </p>
                       <p>Weapon Restriction: {{ skill.weaponRestriction }}</p>
                       <p>Exclusive: {{ skill.exclusive }}</p>
                       <p>range: {{ skill.range }}</p>
@@ -48,8 +62,7 @@
   </div>
 </template>
 
-<style>
-</style>
+<style></style>
 
 <script>
 import axios from "axios";
@@ -60,15 +73,15 @@ export default {
     return {
       errors: [],
       skills: [],
-      nameFilter: ""
+      nameFilter: "",
     };
   },
   created: function() {
-    axios.get("/api/skills").then(response => {
+    axios.get("/api/skills").then((response) => {
       console.log("All Skills:", response.data);
       this.skills = response.data;
     });
   },
-  methods: {}
+  methods: {},
 };
 </script>
