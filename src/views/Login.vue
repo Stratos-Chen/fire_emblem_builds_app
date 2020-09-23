@@ -8,6 +8,7 @@
             <div class="row">
               <div class="col-sm-12">
                 <h3>Login</h3>
+                <h4>If you are trying out this website, type in "testuser@gmail.com" in the email fill-in and "password" in the password fill-in.</h4>
 
                 <form class="comment-form" v-on:submit.prevent="submit()">
                   <ul>
@@ -65,29 +66,29 @@ export default {
     return {
       email: "",
       password: "",
-      errors: [],
+      errors: []
     };
   },
   methods: {
     submit: function() {
       var params = {
         email: this.email,
-        password: this.password,
+        password: this.password
       };
       axios
         .post("/api/sessions", params)
-        .then((response) => {
+        .then(response => {
           axios.defaults.headers.common["Authorization"] =
             "Bearer " + response.data.jwt;
           localStorage.setItem("jwt", response.data.jwt);
           this.$router.push("/");
         })
-        .catch((error) => {
+        .catch(error => {
           this.errors = ["Invalid email or password."];
           this.email = "";
           this.password = "";
         });
-    },
-  },
+    }
+  }
 };
 </script>
